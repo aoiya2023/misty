@@ -1,0 +1,9 @@
+#textGroup {
+    display:flex; 
+    flex-direction: row;
+    margin: 3px 0px;
+}
+
+#text {
+    margin: 0px 0px;
+}

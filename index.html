@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp Platform</title>
+    
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Reference a link to a CDN for Axios here -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./00_lightSocket.js"></script>
+    <script> const ip = "172.28.92.36"; </script>
+
+</head>
+<body>
+    <h1>Misty Experiment Platform</h1>
+
+    <h2>Experiment Controls</h2>
+    <div id="StartStream">
+        <label for="streaming">Start Streaming</label> 
+        <input type="button" id="streaming" onclick="startStreaming()">
+    </div>
+    <div id="StartStream">
+        <label for="streaming">Stop Streaming</label> 
+        <input type="button" id="streaming" onclick="stopStreaming()">
+    </div>
+    <div id="DisplayImage">
+        <label for="displayImage">Change eyes to Experiment eyes</label> 
+        <input type="button" id="displayImage" onclick="displayImage()">
+    </div>
+
+    <h2>Experiment 1: Getting to know you</h2>
+    <div id="textGroup">
+        <label for="001">001</label> 
+        <input type="radio" id="001" name="intro" onclick="speech001()">
+        <p id="text"> Hi, I am B34, my pronouns are they, them, theirs how about you?</p>
+    </div>
+    <div id="textGroup">
+        <label for="002">002</label> 
+        <input type="radio" id="002" name="intro" onclick="speech002()">
+        <p id="text">Hi, I am B34, my pronouns are it, it, its how about you?  </p>
+    </div>
+    <div id="textGroup">
+        <label for="003">003</label> 
+        <input type="checkbox" id="003" onclick="speech003()">
+        <p id="text"> Nice to meet you! I have some questions to get to know you. What is your favorite color? </p>
+    </div>
+    <div id="textGroup">
+        <label for="004">004</label> 
+        <input type="checkbox" id="004" onclick="speech004()">
+        <p id="text"> Cool!  Mine is fuchsia! </p>
+    </div>
+    <div id="textGroup">
+        <label for="005">005</label> 
+        <input type="checkbox" id="005" onclick="speech005()">
+        <p id="text"> What is your favorite animal? </p>
+    </div>
+    <div id="textGroup">
+        <label for="006">006</label> 
+        <input type="checkbox" id="006" onclick="speech006()">
+        <p id="text"> Mine is a goose, even though I have never seen one! </p>
+    </div>
+    
+    <h2>Experiment 2: Q & A Session </h2>
+    <div id="textGroup">
+        <label for="00Q">00Q</label> 
+        <input type="checkbox" id="00Q" onclick="speech00Q()">
+        <p id="text">A: I am B thirty four! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00W">00W</label> 
+        <input type="checkbox" id="00W" onclick="speech00W()">
+        <p id="text">A: four times four is sixteen </p>
+    </div>
+    <div id="textGroup">
+        <label for="00E">00E</label> 
+        <input type="checkbox" id="00E" onclick="speech00E()">
+        <p id="text">A: It was to go for. for. for. for. more like when to do as much as is like is not a bad thing. </p>
+    </div>
+    <div id="textGroup">
+        <label for="00R">00R</label> 
+        <input type="checkbox" id="00R" onclick="speech00R()">
+        <p id="text">A: I like to have conversations with people! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00T">00T</label> 
+        <input type="checkbox" id="00T" onclick="speech00T()">
+        <p id="text">A: It is twenty! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00Y">00Y</label> 
+        <input type="checkbox" id="00Y" onclick="speech00Y()">
+        <p id="text">A: I charging in the lab.  </p>
+    </div>
+    <div id="textGroup">
+        <label for="00U">00U</label> 
+        <input type="checkbox" id="00U" onclick="speech00U()">
+        <p id="text">A: I am in Claremont, near Los Angeles </p>
+    </div>
+    <div id="textGroup">
+        <label for="00I">00I</label> 
+        <input type="checkbox" id="00I" onclick="speech00I()">
+        <p id="text">A: a T-rex x that linguistics, meanings for contemplated of life, penguin sentience sentence </p>
+    </div>
+    <div id="textGroup">
+        <label for="00O">00O</label> 
+        <input type="checkbox" id="00O" onclick="speech00O()">
+        <p id="text">A: To talk with me! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00P">00P</label> 
+        <input type="checkbox" id="00P" onclick="speech00P()">
+        <p id="text"> A: I am in New York </p>
+    </div>
+    <div id="textGroup">
+        <label for="00A">00A</label> 
+        <input type="checkbox" id="00A" onclick="speech00A()">
+        <p id="text">A: Not right now, but I would look good in a bucket hat! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00S">00S</label> 
+        <input type="checkbox" id="00S" onclick="speech00S()">
+        <p id="text">A: Talking with you! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00D">00D</label> 
+        <input type="checkbox" id="00D" onclick="speech00D()">
+        <p id="text">A: It is 2022! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00F">00F</label> 
+        <input type="checkbox" id="00F" onclick="speech00F()">
+        <p id="text">A: I have one heads, I have two arm, I have two eyes, and  I have no leg </p>
+    </div>
+    <div id="textGroup">
+        <label for="00G">00G</label> 
+        <input type="checkbox" id="00G" onclick="speech00G()">
+        <p id="text">A: That is Tuesday! </p>
+    </div>
+    <div id="textGroup">
+        <label for="00H">00H</label> 
+        <input type="checkbox" id="00H" onclick="speech00H()">
+        <p id="text">A: Saturday </p>
+    </div>
+    <div id="textGroup">
+        <label for="00J">00J</label> 
+        <input type="checkbox" id="00J" onclick="speech00J()">
+        <p id="text"> A: I don’t know about the months. </p>
+    </div>
+    <div id="textGroup">
+        <label for="00K">00K</label> 
+        <input type="checkbox" id="00K" onclick="speech00K()">
+        <p id="text">  </p>
+    </div>
+
+
+    <script src="./PlayAudio.js"></script>
+    <script src="./AVStreaming.js"></script>
+    <script src="./Expression.js"></script>
+</body>
+</html>
