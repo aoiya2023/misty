@@ -4,7 +4,7 @@ let image = {
 }
 
 function displayImage() {
-    axios.post("http://" + ip + "/api/images/display", image)
+    axios.post("http://" + ip + "/api/images/display", painImage)
         .then(function (response) {
             // Print the results
             console.log(`displayImage was a ${response.data.status}`);

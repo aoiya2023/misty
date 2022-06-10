@@ -7,133 +7,160 @@ const ip = "172.28.92.36";
 //     "AngularVelocity": 0
 // }
 
+let sound = {
+    // "FileName": "https://drive.google.com/file/d/1L3hBHfi5zNf8y1WuvgE6FBWrhrcMPYrS/preview"
+    // "FileName": "https://ia802609.us.archive.org/9/items/Free_20s_Jazz_Collection/Bennie_Moten_Kater_St._Rag.mp3"
+    "FileName": "",
+    // "FileName": "s_Fear_4m.mp3",
+    "Volume": 50
+    // "FileName": "https://soundcloud.com/aoi-yasuda/misty_fear?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+}
 
-// var timer;
+let painImage = {
+    "FileName": "e_EcstacyHilarious.jpg",
+    "Alpha": 1
+}
 
-// document.addEventListener('keydown', keyPressed)
-// document.addEventListener('keyup', stopDrive)
+let defaultImage = {
+    "FileName": "e_eye3.jpg",
+    "Alpha": 1
+}
 
-// function stopDrive() {
-//     axios.post("http://" + ip + "/api/drive/stop")
-//     // clearInterval(timer);
-//     // timer=null;
+let created;
+let pushed;
+let pushedInt;
+let released;
+let releasedInt;
+let timeDiff;
+let isCreated;
+let socket;
+let time;
+let numTimePressed;
+
+const regex = /[0-9]{2}\.[0-9]*/;
+
+function startBumpSensor() {
+    numTimePressed = 0;
+    socket = new LightSocket(ip, openCallback);
+    socket.Connect();
+}
+
+function stopBumpSensor() {
+
+    socket.Unsubscribe("BumpSensor");
+    socket.Disconnect();
+}
+
+function openCallback() {
+    console.log("socket opened");
+
+    socket.Subscribe("LefBumpSensor", "BumpSensor", null, 
+        "sensorName", "==", "Bump_FrontLeft", null, _leftBumpSensor);
+
+}
+
+function _leftBumpSensor(data) {
+    try {
+        console.log(data);
+        created = data.message.created;
+        isContacted = data.message.isContacted;
+
+        if (created !== null && isContacted) {
+            numTimePressed++;
+            console.log(numTimePressed);
+            playAudio();
+            displayPain();
+            pushed = created.match(regex);
+            pushedInt = parseFloat(pushed);
+            
+            console.log("Pushed: " + pushed);
+        }
+        if (created !== null && !isContacted) {
+            stopAudio();
+            displayDefault();
+            released = created.match(regex);
+            releasedInt = parseFloat(released);
+
+            timeDiff = releasedInt - pushedInt;
+
+            console.log("Released: " + released);
+            console.log("Duration: " + timeDiff);
+
+        }
+
+        // console.log(created);
+        // console.log(isCreated);
+        // console.log(sensorName);
+    }
+    catch(e) {
+        console.log("Error: " + e)
+    }
+}
 
 
-// }
+function playAudio() {
+    if (numTimePressed === 1) {
+        sound["FileName"] = "ringtone.mp3";
+    }
+    else if (numTimePressed === 2) {
+        sound["FileName"] = "starWars.mp3";
+    }
+    else if (numTimePressed === 3) {
+        sound["FileName"] = "oneVoice.mp3";
+    }
+    else if (numTimePressed === 4) {
+        sound["FileName"] = "aThousandMiles.mp3";
+    }
+    else {
+        sound["FileName"] = "piratesOfCaribbean.mp3";
+    }
+    axios.post("http://" + ip + "/api/audio/play", sound)
+        .then(function (response) {
+            // Print the results
+            console.log(`PlayAudio was a ${response.data.status}`);
+        })
+        // Use .catch() to handle errors
+        .catch(function (error) {
+            // Print any errors
+            console.log(`There was an error with the request ${error}`);
+        });
+}
 
-// function keyPressed(e) {
-//     console.log("key press event " + `${e.code}`)
-    
-//     if (timer) return;
-    
-//     if (e.code === 'KeyW') {
-//         data["LinearVelocity"] = 30
-//         console.log(data)
-//     }
-//     if (e.code === 'KeyS') {
-//         data["LinearVelocity"] = -30
-//     }
-//     if (e.code === 'KeyA') {
-//         data["AngularVelocity"] = -30
-//     }
-//     if (e.code === 'KeyD') {
-//         data["AngularVelocity"] = 30
-//     }
-//     // timer = setInterval(drive(data), 100);
+function stopAudio() {
+    axios.post("http://" + ip + "/api/audio/stop")
+        .then(function (response) {
+            // Print the results
+            console.log(`StopAudio was a ${response.data.status}`);
+        })
+        // Use .catch() to handle errors
+        .catch(function (error) {
+            // Print any errors
+            console.log(`There was an error with the request ${error}`);
+        });
+}
 
-// }
+function displayPain() {
+    axios.post("http://" + ip + "/api/images/display", painImage)
+        .then(function (response) {
+            // Print the results
+            console.log(`displayPain was a ${response.data.status}`);
+        })
+        // Use .catch() to handle errors
+        .catch(function (error) {
+            // Print any errors
+            console.log(`There was an error with the request ${error}`);
+        })
+}
 
-// function drive(data) {
-//     axios.post("http://" + ip + "/api/drive", data)
-//     // Use .then() to handle a successful response.
-//     .then(function (response) {
-//         // Print the results
-//         console.log(`Drive was a ${response.data.status}`);
-//     })
-//     // Use .catch() to handle errors
-//     .catch(function (error) {
-//         // Print any errors
-//         console.log(`There was an error with the request ${error}`);
-//     });
-
-//     // socket = new LightSocket(ip, openCallback);
-//     // // Open the connection to the robot.
-//     // socket.Connect();
-    
-// }
-
-
-
-// function openCallback() {
-
-//     console.log("socket opened");
-
-//     // Subscribe to an event called CenterTimeOfFlight that returns TimeOfFlight data. 
-//     // socket.Subscribe(eventName, msgType, debounceMs, property, inequality, value, [returnProperty], [eventCallback])
-//     socket.Subscribe("CenterTimeOfFlight", "TimeOfFlight", 100, 
-//     "SensorPosition", "==", "Center", null, _centerTimeOfFlight);
-
-//     // Subscribe to an event called LocomotionCommand that returns data when Misty's angular or linear velocity changes.
-//     socket.Subscribe("LocomotionCommand", "LocomotionCommand", null, 
-//     null, null, null, null, _locomotionCommand);
-
-//     let data = {
-//         LinearVelocity: 30,
-//         AngularVelocity: 10,
-//         TimeMS: 2000
-//     }
-
-//     // Use axios.post() to send the data to the endpoint for the DriveTime command.
-//     axios.post("http://" + ip + "/api/drive/time", data)
-//         // Use .then() to handle a successful response.
-//         .then(function (response) {
-//             // Print the results
-//             console.log(`DriveTime was a ${response.data.status}`);
-//         })
-//         // Use .catch() to handle errors
-//         .catch(function (error) {
-//             // Print any errors
-//             console.log(`There was an error with the request ${error}`);
-//         });
-    
-// }
-
-// /* CALLBACKS */
-// let _centerTimeOfFlight = function (data) {
-//     try {
-//         let distance = data.message.distanceInMeters;
-//         console.log(distance);
-
-//         if (distance < 0.2) {
-//             axios.post("http://" + ip + "/api/drive/stop")
-//                 .then(function (response) {
-//                     // Print the results
-//                     console.log(`Stop was a ${response.data.status}`);
-//                 })
-//                 .catch(function (error) {
-//                     // Print any errors
-//                     console.log(`There was an error with the request ${error}`);
-//                 });
-//         }
-//     } 
-//     catch(e) {
-
-//     }
-
-// };
-
-// let _locomotionCommand = function (data) {
-//     try {
-//         // Use an if statement to check whether Misty stopped moving
-//         if (data.message.linearVelocity === 0) {
-//             console.log("LocomotionCommand received linear velocity as", data.message.linearVelocity);
-//             socket.Unsubscribe("CenterTimeOfFlight");
-//             socket.Unsubscribe("LocomotionCommand");
-
-//         }
-//     }
-//     catch(e) {
-
-//     }
-// };
-
+function displayDefault() {
+    axios.post("http://" + ip + "/api/images/display", defaultImage)
+        .then(function (response) {
+            // Print the results
+            console.log(`displayDefault was a ${response.data.status}`);
+        })
+        // Use .catch() to handle errors
+        .catch(function (error) {
+            // Print any errors
+            console.log(`There was an error with the request ${error}`);
+        })
+}

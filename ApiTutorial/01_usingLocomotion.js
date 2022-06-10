@@ -1,5 +1,5 @@
 // misty's IP address
-const ip = "172.28.123.134";
+const ip = "172.28.92.36";
 // Create new instane of LightSocket called socket.
 let socket = new LightSocket(ip, openCallback);
 
@@ -15,9 +15,9 @@ function openCallback() {
     socket.Subscribe("CenterTimeOfFlight", "TimeOfFlight", 100, 
     "SensorPosition", "==", "Center", null, _centerTimeOfFlight);
 
-    // Subscribe to an event called LocomotionCommand that returns data when Misty's angular or linear velocity changes.
-    socket.Subscribe("LocomotionCommand", "LocomotionCommand", null, 
-    null, null, null, null, _locomotionCommand);
+    // // Subscribe to an event called LocomotionCommand that returns data when Misty's angular or linear velocity changes.
+    // socket.Subscribe("LocomotionCommand", "LocomotionCommand", null, 
+    // null, null, null, null, _locomotionCommand);
 
     let data = {
         LinearVelocity: 50,
@@ -25,18 +25,18 @@ function openCallback() {
         TimeMS: 5000
     }
 
-    // Use axios.post() to send the data to the endpoint for the DriveTime command.
-    axios.post("http://" + ip + "/api/drive/time", data)
-        // Use .then() to handle a successful response.
-        .then(function (response) {
-            // Print the results
-            console.log(`DriveTime was a ${response.data.status}`);
-        })
-        // Use .catch() to handle errors
-        .catch(function (error) {
-            // Print any errors
-            console.log(`There was an error with the request ${error}`);
-        });
+    // // Use axios.post() to send the data to the endpoint for the DriveTime command.
+    // axios.post("http://" + ip + "/api/drive/time", data)
+    //     // Use .then() to handle a successful response.
+    //     .then(function (response) {
+    //         // Print the results
+    //         console.log(`DriveTime was a ${response.data.status}`);
+    //     })
+    //     // Use .catch() to handle errors
+    //     .catch(function (error) {
+    //         // Print any errors
+    //         console.log(`There was an error with the request ${error}`);
+    //     });
     
 }
 
@@ -63,20 +63,20 @@ let _centerTimeOfFlight = function (data) {
     }
 
 };
-let _locomotionCommand = function (data) {
-    try {
-        // Use an if statement to check whether Misty stopped moving
-        if (data.message.linearVelocity === 0) {
-            console.log("LocomotionCommand received linear velocity as", data.message.linearVelocity);
-            socket.Unsubscribe("CenterTimeOfFlight");
-            socket.Unsubscribe("LocomotionCommand");
+// let _locomotionCommand = function (data) {
+//     try {
+//         // Use an if statement to check whether Misty stopped moving
+//         if (data.message.linearVelocity === 0) {
+//             console.log("LocomotionCommand received linear velocity as", data.message.linearVelocity);
+//             socket.Unsubscribe("CenterTimeOfFlight");
+//             socket.Unsubscribe("LocomotionCommand");
 
-        }
-    }
-    catch(e) {
+//         }
+//     }
+//     catch(e) {
 
-    }
-};
+//     }
+// };
 
 // Open the connection to the robot.
 socket.Connect();

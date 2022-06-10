@@ -13,18 +13,26 @@
 
 </head>
 <body>
-    <div id="GetBlinkSettings">
-        <label for="getBlink">Get Blink Settings</label> 
-        <input type="checkbox" id="getBlink" onclick="getBlinkSettings()">
+    <div id="PlayAudio">
+        <label for="playAudio">Play pain sound</label> 
+        <input type="button" id="playAudio" onclick="playAudio()">
     </div>
-    <div id="ChangeBlinkSettings">
-        <label for="setBlink">Set Blink Settings</label> 
-        <input type="checkbox" id="setBlink" onclick="setBlinkSettings()">
+    <div id="PauseAudio">
+        <label for="pauseAudio">Pause pain sound</label> 
+        <input type="button" id="pauseAudio" onclick="pauseAudio()">
     </div>
-    <div id="DisplayImage">
-        <label for="displayImage">Change eyes to e_eye3.jpg</label> 
-        <input type="checkbox" id="displayImage" onclick="displayImage()">
+
+    <div id="BumpSensor">
+        <label for="startBumpSensor">Start bumbper sensor</label> 
+        <input type="button" id="startBumberSensor" onclick="startBumpSensor()">
     </div>
+
+    <div id="BumberSensor">
+        <label for="stopBumpSensor">Stop bumper sensor</label> 
+        <input type="button" id="stopBumberSensor" onclick="stopBumpSensor()">
+    </div>
+    
+
 
     <script src="./Playground.js"></script>
 </body>
