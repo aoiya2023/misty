@@ -36,9 +36,7 @@ implied.
 * 	 	https://www.mistyrobotics.com/legal/end-user-license-agreement/
 */
 
-function LightSocket(ip, OnOpenCallback = null, OnCloseCallback = null, OnErrorCallback = null) {
-
-	var ipAddress = (ip === null ? "localhost" : ip);
+export function LightSocket(websocket, OnOpenCallback = null, OnCloseCallback = null, OnErrorCallback = null) {
 	var eventListeners = new Map();
 
 	this.Subscribe = function (eventName, msgType, debounceMs, property, inequality, value, returnProperty, eventCallback) {
@@ -87,9 +85,7 @@ function LightSocket(ip, OnOpenCallback = null, OnCloseCallback = null, OnErrorC
 	};
 
 	this.Connect = function () {
-		var me = this;
-		websocket = new WebSocket("ws://" + ipAddress + "/pubsub");
-
+		
 		websocket.onopen = function (event) {
 			console.log("Opened socket");
 			if (OnOpenCallback) {

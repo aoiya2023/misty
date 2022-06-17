@@ -1,11 +1,11 @@
 // import { startStreaming, stopStreaming } from "./AvStreaming";
 import { startAvStreaming, stopAvStreaming, enableAvStreamingService, disableAvStreamingService } from "./APIcalls";
-
+import ReactionButtonPress from './ReactionButtonPress';
 /**
  * AV Streaming
  */
 
-// Streaming URL: rtsp://172.28.92.36:1936
+// Streaming URL: rtsp://192.168.0.7:1936
 
 // Stops code execution for a set amount of time.
 function sleep(ms) {
@@ -34,9 +34,7 @@ export default function Controls(props) {
             <h3>Experiment Controls</h3>
             <button onClick={() => startStreaming(props.ip)}>Start Streaming</button>
             <button onClick={() => stopStreaming(props.ip)}>Stop Streaming</button>
-
+            <ReactionButtonPress ip={props.ip} saveLog={props.saveLog}/>
         </div>
-
-        
     )
 }

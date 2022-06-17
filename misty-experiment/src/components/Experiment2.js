@@ -2,7 +2,7 @@ import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp2 } from "./Texts";
 
-export default function Experiment2(prop) {
+export default function Experiment2(props) {
     const [checkedState, setCheckedState] = useState(
         new Array(textsExp2.length).fill(false)
     );
@@ -14,7 +14,7 @@ export default function Experiment2(prop) {
         setCheckedState(updatedCheckedState);
 
         console.log(text);
-        speak(text, utteranceId);
+        speak(props.ip, text, utteranceId);
     };
 
     return (

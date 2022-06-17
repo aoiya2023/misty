@@ -1,91 +1,101 @@
-let created;
-let pushed;
-let released;
-let timeDiff;
-let socket;
-let numTimePressed;
+import { LightSocket } from './LightSocket';
+import { playAudio, stopAudio, displayImage } from './APIcalls';
+import ReconnectingWebSocket from 'reconnecting-websocket';
 
-// const regexSec = /[0-9]{2}\.[0-9]*/;
-// const regexMin = /:[0-9]{2}/;
-// const regexHr = /T[0-9]{2}/;
 
-function startBumpSensor() {
-    numTimePressed = 0;
-    socket = new LightSocket(ip, openCallback);
-    socket.Connect();
-}
 
-function stopBumpSensor() {
+export default function ReactionButtonPress(props) {
+    let created;
+    let pushed;
+    let released;
+    let timeDiff;
+    let socket;
+    let numTimePressed;
 
-    socket.Unsubscribe("BumpSensor");
-    socket.Disconnect();
-}
-
-function openCallback() {
-    console.log("socket opened");
-
-    socket.Subscribe("LeftBumpSensor", "BumpSensor", null, 
+    function startBumpSensor() {
+        console.log("start sensor");
+        // setNumTimePressed(0);
+        numTimePressed = 0;
+        const options = {
+            connectionTimeout: 1000,
+        }
+        const websocket = new ReconnectingWebSocket("ws://" + props.ip + "/pubsub", [], options);
+        socket = new LightSocket(websocket, openCallback);
+        socket.Connect();
+    }
+    
+    function stopBumpSensor() {
+        socket.Unsubscribe("BumpSensor");
+        socket.Disconnect();
+    }
+    
+    function openCallback() {
+        console.log("socket opened");
+        const time = Date.now().toString();
+        socket.Subscribe("LeftBumpSensor_" + time, "BumpSensor", null, 
         "sensorName", "==", "Bump_FrontLeft", null, _leftBumpSensor);
+    }
 
-}
+    function _leftBumpSensor(data) {
+        try {
+            console.log(data);
+            created = data.message.created;
+            let isContacted = data.message.isContacted;
+    
+            if (created !== null && isContacted) {
+                numTimePressed++;
 
-function _leftBumpSensor(data) {
-    try {
-        console.log(data);
-        created = data.message.created;
-        isContacted = data.message.isContacted;
-
-        if (created !== null && isContacted) {
-            numTimePressed++;
-            console.log('Press Num: ' + numTimePressed);
-            playSound();
-            image["FileName"] = "e_EcstacyHilarious.jpg";
-            displayImage(image);
-            
-            pushed = new Date(created);
-            console.log("Pushed: " + pushed);
+                playSound();
+                displayImage(props.ip, "e_EcstacyHilarious.jpg");
+                
+                pushed = new Date(created);
+                console.log("Pushed: " + pushed);
+            }
+            if (created !== null && !isContacted) {
+                stopAudio(props.ip);
+                displayImage(props.ip, "e_eye3.jpg");
+    
+                released = new Date(created);
+                timeDiff = (released - pushed) / 1000;
+    
+                console.log("Released: " + released);
+                console.log("Duration: " + timeDiff);
+    
+            }
+            let numString = toString(numTimePressed);
+            let durationString = toString(timeDiff);
+            let content = "NumTimePressed: " + numString + "     Duration: " + durationString 
+            props.saveLog("./log.text", content);
+    
         }
-        if (created !== null && !isContacted) {
-            stopAudio();
-            image["FileName"] = "e_eye3.jpg";
-            displayImage(image);
-
-            released = new Date(created);
-            timeDiff = (released - pushed) / 1000;
-
-            console.log("Released: " + released);
-            console.log("Duration: " + timeDiff);
-
+        catch(e) {
+            console.log("Error: " + e)
         }
+    }
 
+    function playSound() {
+        playAudio(props.ip, "s_Fear.wav");
+        if (numTimePressed % 6 === 1) {
+            console.log("first reaction");
+        }
+        else if (numTimePressed % 6 === 2) {
+            console.log("second reaction");
+        }
+        else if (numTimePressed % 6 === 3) {
+            console.log("third reaction");
+        }
+        else if (numTimePressed % 6 === 4) {
+            console.log("fourth reaction");   
+        }
+        else if (numTimePressed % 6 === 5) {
+            console.log("fifth reaction");
+        }
+        else  {
+            console.log("sixth reaction");   
+        }
     }
-    catch(e) {
-        console.log("Error: " + e)
-    }
-}
-
-function playSound() {
-    sound["FileName"] = "s_Fear.wav";
-    playAudio(sound);
-    if (numTimePressed === 2) {
-        speech00Z();
-    }
-    else if (numTimePressed === 3) {
-        speech00X();
-    }
-    else if (numTimePressed === 4) {
-        speech00C();
-    }
-    else if (numTimePressed === 5) {
-        speech00V();
-    }
-    else if (numTimePressed >= 6) {
-        speech00B();
-    }
-}
 
 
-export default ReactionButtonPress() {
     return (
         <div>
             <button onClick={startBumpSensor}>Start Bump Sensor</button>
