@@ -34,7 +34,7 @@ export default function Controls(props) {
             <h3>Experiment Controls</h3>
             <button onClick={() => startStreaming(props.ip)}>Start Streaming</button>
             <button onClick={() => stopStreaming(props.ip)}>Stop Streaming</button>
-            <ReactionButtonPress ip={props.ip} saveLog={props.saveLog}/>
+            <ReactionButtonPress ip={props.ip}/>
         </div>
     )
 }

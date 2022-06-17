@@ -6,7 +6,7 @@ import Experiment2 from './components/Experiment2';
 
 
 
-const ip = "192.168.0.7";
+const ip = "172.28.92.36";
 
 
 

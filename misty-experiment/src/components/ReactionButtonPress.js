@@ -62,11 +62,6 @@ export default function ReactionButtonPress(props) {
                 console.log("Duration: " + timeDiff);
     
             }
-            let numString = toString(numTimePressed);
-            let durationString = toString(timeDiff);
-            let content = "NumTimePressed: " + numString + "     Duration: " + durationString 
-            props.saveLog("./log.text", content);
-    
         }
         catch(e) {
             console.log("Error: " + e)
