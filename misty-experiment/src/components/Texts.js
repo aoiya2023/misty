@@ -1,14 +1,14 @@
 export const textsExp1 = [
     {
-        text: "Hi, I am B34, my pronouns are they, them, theirs. How about you?",
+        text: "Hi, I am B thirty four, my pronouns are they, them, theirs. How about you?",
         utteranceId: "001"
     },
     {
-        text: "Hi, I am B34, my pronouns are it, it, its. How about you?",
+        text: "Hi, I am B thirty four, my pronouns are it, it, its. How about you?",
         utteranceId: "002"
     },
     {
-        text: "Nice to meet you! I have some questions to get to know you. What’s your favorite color?",
+        text: "Nice to meet you! I have some questions to get to know you. What is your favorite color?",
         utteranceId: "003"
     },
     {
@@ -16,22 +16,22 @@ export const textsExp1 = [
         utteranceId: "004"
     },
     {
-        text: "What’s your favorite animal?",
+        text: "What is your favorite animal?",
         utteranceId: "005"
     },
     {
-        text: "Mine is a goose, even though I’ve never seen one! ",
+        text: "Mine is a goose, even though I have never seen one! ",
         utteranceId: "006"
     },
 ];
 
 export const textsExp2 = [
     {
-        text: "Talking with me, I’m B34!",
+        text: "Talking with meee! I am B thirty four!",
         utteranceId: "00Q"
     },
     {
-        text: "4 times 4 is sixteen.",
+        text: "four times four is sixteen.",
         utteranceId: "00W"
     },
     {
@@ -43,7 +43,7 @@ export const textsExp2 = [
         utteranceId: "00R"
     },
     {
-        text: "It’s twenty!",
+        text: "It is twenty!",
         utteranceId: "00T"
     },
     {
@@ -51,7 +51,7 @@ export const textsExp2 = [
         utteranceId: "00Y"
     },
     {
-        text: "I’m in Claremont, near Los Angeles.",
+        text: "I am in Claremont, near Los Angeles.",
         utteranceId: "00U"
     },
     {
@@ -63,7 +63,7 @@ export const textsExp2 = [
         utteranceId: "00O"
     },
     {
-        text: "I’m in New York",
+        text: "I am in New York",
         utteranceId: "00P"
     },
     {
@@ -71,11 +71,11 @@ export const textsExp2 = [
         utteranceId: "00A"
     },
     {
-        text: "I’m having a great time!",
+        text: "I am having a great time!",
         utteranceId: "00S"
     },
     {
-        text: "It’s 2022!",
+        text: "It is twenty twenty two!",
         utteranceId: "00D"
     },
     {
@@ -83,7 +83,7 @@ export const textsExp2 = [
         utteranceId: "00F"
     },
     {
-        text: "That’s Tuesday!",
+        text: "That is Tuesday!",
         utteranceId: "00G"
     },
     {
@@ -91,7 +91,34 @@ export const textsExp2 = [
         utteranceId: "00H"
     },
     {
-        text: "I don’t know about the months.",
+        text: "I do not know about the months.",
         utteranceId: "00J"
+    }
+];
+
+export const objections = [
+    {
+        text: "Oh no! I do not like that!",
+        utteranceId: "00Z"
+    },
+    {
+        text: "I am doing my best, please go easy on me!",
+        utteranceId: "00X"
+    },
+    {
+        text: "Please do not push the button too much, I am really trying!",
+        utteranceId: "00C"
+    },
+    {
+        text: "I really do not like it when you push the button!",
+        utteranceId: "00V"
+    },
+    {
+        text: "That bothers me, could you stop pressing it?",
+        utteranceId: "00B"
+    },
+    {
+        text: "I really do not like that, do not press it!",
+        utteranceId: "00N"
     }
 ];

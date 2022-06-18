@@ -1,6 +1,7 @@
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp2 } from "./Texts";
+import { leftArmUp, bothArmsUp, question, nodd } from "./Actions"; 
 
 export default function Experiment2(props) {
     const [checkedState, setCheckedState] = useState(
@@ -15,6 +16,52 @@ export default function Experiment2(props) {
 
         console.log(text);
         speak(props.ip, text, utteranceId);
+
+        if (utteranceId === "00Q") {
+            bothArmsUp(props.ip);
+        }
+        if (utteranceId === "00W") {
+             nodd(props.ip);
+        } 
+        if (utteranceId === "00E") {
+            question(props.ip);
+        }
+        if (utteranceId === "00R") {
+            leftArmUp(props.ip);
+        }
+        if (utteranceId === "00T") {
+            nodd(props.ip);
+        }
+        if (utteranceId === "00Y") {
+            leftArmUp(props.ip);
+        }
+        if (utteranceId === "00U") {
+            nodd(props.ip);
+        }
+        if (utteranceId === "00I") {
+            leftArmUp(props.ip);
+        }
+        if (utteranceId === "00O") {
+            bothArmsUp(props.ip);
+        }
+        if (utteranceId === "00A") {
+            question(props.ip);
+        }
+        if (utteranceId === "00S") {
+            bothArmsUp(props.ip);
+        }
+        if (utteranceId === "00D") {
+            nodd(props.ip);
+        }
+        if (utteranceId === "00G") {
+            leftArmUp(props.ip);
+        }
+        if (utteranceId === "00H") {
+            question(props.ip);
+        }
+        if (utteranceId === "00J") {
+            question(props.ip);
+        }
     };
 
     return (

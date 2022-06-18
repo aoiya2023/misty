@@ -5,7 +5,7 @@ import ReactionButtonPress from './ReactionButtonPress';
  * AV Streaming
  */
 
-// Streaming URL: rtsp://192.168.0.7:1936
+// Streaming URL: rtsp://ayasuda:v35K+%GC:t]w%SM5@172.28.92.36:1936
 
 // Stops code execution for a set amount of time.
 function sleep(ms) {
@@ -26,7 +26,6 @@ async function stopStreaming(ip) {
     await sleep(2000);
     disableAvStreamingService(ip);
 }
-
 
 export default function Controls(props) {
     return (

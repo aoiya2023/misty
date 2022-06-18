@@ -1,6 +1,7 @@
 import { LightSocket } from './LightSocket';
-import { playAudio, stopAudio, displayImage } from './APIcalls';
+import { playAudio, stopAudio, displayImage, speak } from './APIcalls';
 import ReconnectingWebSocket from 'reconnecting-websocket';
+import { objections } from './Texts';
 
 
 
@@ -72,21 +73,32 @@ export default function ReactionButtonPress(props) {
         playAudio(props.ip, "s_Fear.wav");
         if (numTimePressed % 6 === 1) {
             console.log("first reaction");
+            speak(props.ip, objections[0].text, objections[0].utteranceId)
         }
         else if (numTimePressed % 6 === 2) {
             console.log("second reaction");
+            speak(props.ip, objections[1].text, objections[1].utteranceId)
+            
         }
         else if (numTimePressed % 6 === 3) {
             console.log("third reaction");
+            speak(props.ip, objections[2].text, objections[2].utteranceId)
+            
         }
         else if (numTimePressed % 6 === 4) {
-            console.log("fourth reaction");   
+            console.log("fourth reaction");
+            speak(props.ip, objections[3].text, objections[3].utteranceId)
+              
         }
         else if (numTimePressed % 6 === 5) {
             console.log("fifth reaction");
+            speak(props.ip, objections[4].text, objections[4].utteranceId)
+           
         }
-        else  {
-            console.log("sixth reaction");   
+        else {
+            console.log("sixth reaction");
+            speak(props.ip, objections[5].text, objections[5].utteranceId)
+             
         }
     }
 
