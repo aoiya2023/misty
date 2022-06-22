@@ -49,7 +49,6 @@ export default function Experiment1(props) {
                                     checked={checkedState[index]}
                                     onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}
                                 />
-                                <span className="checkmark"></span>
                                 <label htmlFor={index}>{utteranceId + ': ' + text}</label>
                             </div>
                         </li>

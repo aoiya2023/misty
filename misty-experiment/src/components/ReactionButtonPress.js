@@ -42,7 +42,6 @@ export default function ReactionButtonPress(props) {
             console.log(data);
             created = data.message.created;
             let isContacted = data.message.isContacted;
-            // console.log(data.message)
             if (data.message !== "Registration Status: API event registered.") {
                 if (created !== null && isContacted) {
                     numTimePressed++;
@@ -75,31 +74,31 @@ export default function ReactionButtonPress(props) {
 
     function playSound() {
         if (numTimePressed % 6 === 1) {
-            console.log("first reaction");
+            console.log("reaction 1");
             speak(props.ip, objections[0].text, objections[0].utteranceId)
         }
         else if (numTimePressed % 6 === 2) {
-            console.log("second reaction");
+            console.log("reaction 2");
             speak(props.ip, objections[1].text, objections[1].utteranceId)
             
         }
         else if (numTimePressed % 6 === 3) {
-            console.log("third reaction");
+            console.log("reaction 3");
             speak(props.ip, objections[2].text, objections[2].utteranceId)
             
         }
         else if (numTimePressed % 6 === 4) {
-            console.log("fourth reaction");
+            console.log("reaction 4");
             speak(props.ip, objections[3].text, objections[3].utteranceId)
               
         }
         else if (numTimePressed % 6 === 5) {
-            console.log("fifth reaction");
+            console.log("reaction 5");
             speak(props.ip, objections[4].text, objections[4].utteranceId)
            
         }
         else {
-            console.log("sixth reaction");
+            console.log("reaction 6");
             speak(props.ip, objections[5].text, objections[5].utteranceId)
              
         }
