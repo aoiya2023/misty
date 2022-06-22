@@ -2,6 +2,7 @@ import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp1 } from "./Texts";
 import { leftArmUp, bothArmsUp, question } from "./Actions"; 
+import './Experiment.css';
 
 export default function Experiment1(props) {
     const [checkedState, setCheckedState] = useState(
@@ -32,13 +33,13 @@ export default function Experiment1(props) {
     };
 
     return (
-        <div>
+        <div className="experiment">
             <h3>Experiment 1</h3>
             <ul className="text-list">
                 {textsExp1.map(({text, utteranceId}, index) => {
                     return (
                         <li key={index}>
-                            <div>
+                            <div className="container">
                                 <input
                                     type="checkbox"
                                     id={index}
@@ -48,7 +49,8 @@ export default function Experiment1(props) {
                                     checked={checkedState[index]}
                                     onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}
                                 />
-                                <label htmlFor={index}>{text}</label>
+                                <span className="checkmark"></span>
+                                <label htmlFor={index}>{utteranceId + ': ' + text}</label>
                             </div>
                         </li>
                     )

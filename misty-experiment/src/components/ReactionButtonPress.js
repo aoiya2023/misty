@@ -42,27 +42,31 @@ export default function ReactionButtonPress(props) {
             console.log(data);
             created = data.message.created;
             let isContacted = data.message.isContacted;
+            // console.log(data.message)
+            if (data.message !== "Registration Status: API event registered.") {
+                if (created !== null && isContacted) {
+                    numTimePressed++;
     
-            if (created !== null && isContacted) {
-                numTimePressed++;
-
-                playSound();
-                displayImage(props.ip, "e_EcstacyHilarious.jpg");
-                
-                pushed = new Date(created);
-                console.log("Pushed: " + pushed);
+                    playAudio(props.ip, "s_Fear.wav");
+                    displayImage(props.ip, "e_EcstacyHilarious.jpg");
+                    
+                    pushed = new Date(created);
+                    console.log("Pushed: " + pushed);
+                }
+                if (created !== null && !isContacted) {
+                    stopAudio(props.ip);
+                    displayImage(props.ip, "e_eye3.jpg");
+                    playSound();
+        
+                    released = new Date(created);
+                    timeDiff = (released - pushed) / 1000;
+        
+                    console.log("Released: " + released);
+                    console.log("Duration: " + timeDiff);
+        
+                }
             }
-            if (created !== null && !isContacted) {
-                stopAudio(props.ip);
-                displayImage(props.ip, "e_eye3.jpg");
-    
-                released = new Date(created);
-                timeDiff = (released - pushed) / 1000;
-    
-                console.log("Released: " + released);
-                console.log("Duration: " + timeDiff);
-    
-            }
+            
         }
         catch(e) {
             console.log("Error: " + e)
@@ -70,7 +74,6 @@ export default function ReactionButtonPress(props) {
     }
 
     function playSound() {
-        playAudio(props.ip, "s_Fear.wav");
         if (numTimePressed % 6 === 1) {
             console.log("first reaction");
             speak(props.ip, objections[0].text, objections[0].utteranceId)
@@ -104,9 +107,9 @@ export default function ReactionButtonPress(props) {
 
 
     return (
-        <div>
-            <button onClick={startBumpSensor}>Start Bump Sensor</button>
-            <button onClick={stopBumpSensor}>Stop Bump Sensor</button>
+        <div className="bump-button">
+            <button className="button" onClick={startBumpSensor}>Start Bump Sensor</button>
+            <button className="button" onClick={stopBumpSensor}>Stop Bump Sensor</button>
         </div>
         
     )

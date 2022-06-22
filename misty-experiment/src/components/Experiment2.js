@@ -65,13 +65,13 @@ export default function Experiment2(props) {
     };
 
     return (
-        <div>
+        <div className="experiment">
             <h3>Experiment 2</h3>
             <ul className="text-list">
                 {textsExp2.map(({text, utteranceId}, index) => {
                     return (
                         <li key={index}>
-                            <div>
+                            <div className="container"> 
                                 <input
                                     type="checkbox"
                                     id={index}
@@ -81,6 +81,7 @@ export default function Experiment2(props) {
                                     checked={checkedState[index]}
                                     onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}
                                 />
+                                <span className="checkmark"></span>
                                 <label htmlFor={index}>{text}</label>
                             </div>
                         </li>
