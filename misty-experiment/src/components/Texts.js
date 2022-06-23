@@ -23,6 +23,10 @@ export const textsExp1 = [
         text: "Mine is a goose, even though I have never seen one! ",
         utteranceId: "006"
     },
+    {
+        text: "I am going to wait while you take the survey, it is been nice talking to you!",
+        utteranceId: "007"
+    }
 ];
 
 export const textsExp2 = [
@@ -121,4 +125,28 @@ export const objections = [
         text: "I really do not like that, do not press it!",
         utteranceId: "00N"
     }
+];
+
+export const defaultRes = [
+    {
+        text: "I do not understand.",
+        utteranceId: "100"
+    },
+    {
+        text: "I am doing well, thank you!",
+        utteranceId: "101"
+    },
+    {
+        text: "Please give a minute. <break strength=\"strong\"/> I don't know the answer.",
+        utteranceId: "102"
+    },
+    {
+        text: "I am happy!",
+        utteranceId: "103"
+    },
+    {
+        text: "I do not know",
+        utteranceId: "104"
+    }
+
 ];
