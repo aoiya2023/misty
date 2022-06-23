@@ -1,5 +1,5 @@
 // import { startStreaming, stopStreaming } from "./AvStreaming";
-import { startAvStreaming, stopAvStreaming, enableAvStreamingService, disableAvStreamingService } from "./APIcalls";
+import { startAvStreaming, stopAvStreaming, enableAvStreamingService, disableAvStreamingService, speak } from "./APIcalls";
 import ReactionButtonPress from './ReactionButtonPress';
 import "./Controls.css";
 
@@ -34,6 +34,7 @@ export default function Controls(props) {
         <div className="controls">
             <h3>Experiment Controls</h3>
             <div className="button-container">
+                <button className="button" onClick={() => speak(props.ip, "I do not understand", "00L")}>Speak Default (I don't understand)</button>
                 <div className="stream-button">
                     <button className="button" onClick={() => startStreaming(props.ip)}>Start Streaming</button>
                     <button className="button" onClick={() => stopStreaming(props.ip)}>Stop Streaming</button>
