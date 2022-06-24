@@ -63,10 +63,10 @@ export async function bothArmsUp(ip) {
     axios.post("http://" + ip + "/api/arms/set", arms1);
 }
 
-export async function nodd(ip) {
+export async function tilt(ip, pause=false) {
     let head0 = {
-        "Pitch": 26,
-        "Roll": 0,
+        "Pitch": 0,
+        "Roll": 42,
         "Yaw": 0,
         "Velocity": 100
     }
@@ -76,7 +76,10 @@ export async function nodd(ip) {
         "Yaw": 0,
         "Velocity": 100
     }
+    if (pause) {
+        await sleep(2000);
+    }
     axios.post("http://" + ip + "/api/head", head0)
-    await sleep(1000);
+    await sleep(3000);
     axios.post("http://" + ip + "/api/head", head1);
 }

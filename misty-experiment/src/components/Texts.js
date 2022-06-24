@@ -1,31 +1,53 @@
 export const textsExp1 = [
     {
         text: "Hi, I am B thirty four, my pronouns are they, them, theirs. How about you?",
-        utteranceId: "001"
+        utteranceId: "001",
+        condition: 1
     },
     {
         text: "Hi, I am B thirty four, my pronouns are it, it, its. How about you?",
-        utteranceId: "002"
+        utteranceId: "002",
+        condition: 2
+    },
+    {
+        text: "Hi, I am B thirty four. How about you?",
+        utteranceId: "003",
+        condition: 3
     },
     {
         text: "Nice to meet you! I have some questions to get to know you. What is your favorite color?",
-        utteranceId: "003"
+        utteranceId: "004",
+        condition: 0
     },
     {
         text: "Cool!  Mine is fuchsia!",
-        utteranceId: "004"
+        utteranceId: "005",
+        condition: 0
     },
     {
         text: "What is your favorite animal?",
-        utteranceId: "005"
+        utteranceId: "006",
+        condition: 0
     },
     {
         text: "Mine is a goose, even though I have never seen one! ",
-        utteranceId: "006"
+        utteranceId: "007",
+        condition: 0
     },
     {
         text: "I am going to wait while you take the survey, it is been nice talking to you!",
-        utteranceId: "007"
+        utteranceId: "008",
+        condition: 0
+    },
+    {
+        text: "No, my pronouns are they, them!",
+        utteranceId: "009",
+        condition: 1
+    },
+    {
+        text: "No, my pronouns are it, its!",
+        utteranceId: "010",
+        condition: 2
     }
 ];
 
@@ -147,6 +169,10 @@ export const defaultRes = [
     {
         text: "I do not know",
         utteranceId: "104"
+    },
+    {
+        text: "I already answered that, please move on to the next question.",
+        utteranceId: "105"
     }
 
 ];

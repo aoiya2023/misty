@@ -1,7 +1,7 @@
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp2 } from "./Texts";
-import { leftArmUp, bothArmsUp, question, nodd } from "./Actions"; 
+import { leftArmUp, bothArmsUp, question, tilt } from "./Actions"; 
 
 export default function Experiment2(props) {
     const [checkedState, setCheckedState] = useState(
@@ -21,7 +21,7 @@ export default function Experiment2(props) {
             bothArmsUp(props.ip);
         }
         if (utteranceId === "00W") {
-             nodd(props.ip);
+             tilt(props.ip);
         } 
         if (utteranceId === "00E") {
             question(props.ip);
@@ -30,13 +30,13 @@ export default function Experiment2(props) {
             leftArmUp(props.ip);
         }
         if (utteranceId === "00T") {
-            nodd(props.ip);
+            tilt(props.ip);
         }
         if (utteranceId === "00Y") {
             leftArmUp(props.ip);
         }
         if (utteranceId === "00U") {
-            nodd(props.ip);
+            tilt(props.ip);
         }
         if (utteranceId === "00I") {
             leftArmUp(props.ip);
@@ -51,7 +51,7 @@ export default function Experiment2(props) {
             bothArmsUp(props.ip);
         }
         if (utteranceId === "00D") {
-            nodd(props.ip);
+            tilt(props.ip);
         }
         if (utteranceId === "00G") {
             leftArmUp(props.ip);
