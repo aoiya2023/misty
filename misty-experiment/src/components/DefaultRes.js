@@ -1,7 +1,8 @@
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { defaultRes } from "./Texts";
-// import { leftArmUp, bothArmsUp, question } from "./Actions"; 
+// import { leftArmUp, bothArmsUp, question } from "./Actions";
+import Checkbox from '@mui/material/Checkbox'; 
 import './Experiment.css';
 
 export default function DefaultRes(props) {
@@ -40,11 +41,11 @@ export default function DefaultRes(props) {
                     return (
                         <li key={index}>
                             <div className="container">
-                                <input
+                                <Checkbox
                                     type="checkbox"
-                                    id={index}
-                                    name={utteranceId}
-                                    value={utteranceId}
+                                    id={utteranceId}
+                                    // name={utteranceId}
+                                    // value={utteranceId}
                                     title={text}
                                     checked={checkedState[index]}
                                     onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}

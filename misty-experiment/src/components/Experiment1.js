@@ -1,13 +1,14 @@
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp1 } from "./Texts";
-import { leftArmUp, bothArmsUp, question } from "./Actions"; 
+import { leftArmUp, bothArmsUp, question } from "./Actions";
+import Checkbox from '@mui/material/Checkbox';
 import './Experiment.css';
 
 export default function Experiment1(props) {
     const expCondition = parseInt(props.condition)
     let filtered;
-    filtered = textsExp1.filter(({text, utteranceId, condition}) => condition === expCondition || condition === 0);
+    filtered = textsExp1?.filter(({condition}) => condition === expCondition || condition === 0);
     const [checkedState, setCheckedState] = useState(
         new Array(filtered.length).fill(false)
     );
@@ -34,26 +35,20 @@ export default function Experiment1(props) {
         };
         
     };
-
-    // console.log(condition1);
-    // let filtered;
-    // filtered = condition1.filter(({text, utteranceId, condition}) => condition === 1 || condition === 0);
-    // console.log(filtered);
-
     
     return (
         <div className="experiment">
-            <h3>Experiment 1</h3>
+            <h3 className="heading">Experiment 1</h3>
             <ul className="text-list">
                 {filtered.map(({text, utteranceId}, index) => {
                     return (
                         <li key={index}>
                             <div className="container">
-                                <input
+                                <Checkbox
                                     type="checkbox"
-                                    id={index}
-                                    name={utteranceId}
-                                    value={utteranceId}
+                                    id={utteranceId}
+                                    // name={utteranceId}
+                                    // value={utteranceId}
                                     title={text}
                                     checked={checkedState[index]}
                                     onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}

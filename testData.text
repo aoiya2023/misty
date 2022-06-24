@@ -1,0 +1,131 @@
+react-dom.development.js:29840 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+Experiment1.js:18 Hi, I am B thirty four, my pronouns are they, them, theirs. How about you?
+APIcalls.js:39 speak was a Success
+Experiment1.js:18 Nice to meet you! I have some questions to get to know you. What is your favorite color?
+APIcalls.js:39 speak was a Success
+Experiment1.js:18 Cool!  Mine is fuchsia!
+APIcalls.js:39 speak was a Success
+Experiment1.js:18 What is your favorite animal?
+APIcalls.js:39 speak was a Success
+Experiment1.js:18 Mine is a goose, even though I have never seen one! 
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 Talking with meee! I am B thirty four!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 four times four is sixteen.
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 It was to go for. for. for. for. more like when to do as much as is like is not a bad thing.
+APIcalls.js:39 speak was a Success
+ReactionButtonPress.js:17 start sensor
+LightSocket.js:90 Opened socket
+ReactionButtonPress.js:34 socket opened
+LightSocket.js:44 Subscribing to BumpSensor as LeftBumpSensor_1655931472970
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: 'Registration Status: API event registered.'}
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:54 Pushed: Wed Jun 22 2022 13:58:03 GMT-0700 (Pacific Daylight Time)
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:52 PlayAudio was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:78 first reaction
+ReactionButtonPress.js:64 Released: Wed Jun 22 2022 13:58:04 GMT-0700 (Pacific Daylight Time)
+ReactionButtonPress.js:65 Duration: 1.311
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:64 StopAudio was a Success
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 I like to have conversations with people!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 It is twenty!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 They doing homework.
+APIcalls.js:39 speak was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:54 Pushed: Wed Jun 22 2022 13:58:28 GMT-0700 (Pacific Daylight Time)
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:52 PlayAudio was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:82 second reaction
+ReactionButtonPress.js:64 Released: Wed Jun 22 2022 13:58:29 GMT-0700 (Pacific Daylight Time)
+ReactionButtonPress.js:65 Duration: 0.543
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:64 StopAudio was a Success
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 I am in Claremont, near Los Angeles.
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 a T-rex x that linguistics, meanings for contemplated of life, penguin sentence
+APIcalls.js:39 speak was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:54 Pushed: Wed Jun 22 2022 13:58:55 GMT-0700 (Pacific Daylight Time)
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:52 PlayAudio was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:87 third reaction
+ReactionButtonPress.js:64 Released: Wed Jun 22 2022 13:58:57 GMT-0700 (Pacific Daylight Time)
+ReactionButtonPress.js:65 Duration: 2.27
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:64 StopAudio was a Success
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 There are two wheels on a bicycle!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 I am in New York
+APIcalls.js:39 speak was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:54 Pushed: Wed Jun 22 2022 13:59:16 GMT-0700 (Pacific Daylight Time)
+APIcalls.js:52 PlayAudio was a Success
+APIcalls.js:131 displayImage was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:92 fourth reaction
+ReactionButtonPress.js:64 Released: Wed Jun 22 2022 13:59:16 GMT-0700 (Pacific Daylight Time)
+ReactionButtonPress.js:65 Duration: 0.32
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:64 StopAudio was a Success
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 Not right now!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 I am having a great time!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 It is twenty twenty two!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 People have one heads, people have two arm, People have two eyes, and people have no leg.
+APIcalls.js:39 speak was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:54 Pushed: Wed Jun 22 2022 13:59:45 GMT-0700 (Pacific Daylight Time)
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:52 PlayAudio was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:97 fifth reaction
+ReactionButtonPress.js:64 Released: Wed Jun 22 2022 13:59:47 GMT-0700 (Pacific Daylight Time)
+ReactionButtonPress.js:65 Duration: 1.565
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:64 StopAudio was a Success
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 That is Tuesday!
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 Saturday
+APIcalls.js:39 speak was a Success
+Experiment2.js:17 I do not know about the months.
+APIcalls.js:39 speak was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:54 Pushed: Wed Jun 22 2022 14:00:08 GMT-0700 (Pacific Daylight Time)
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:52 PlayAudio was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:102 sixth reaction
+ReactionButtonPress.js:64 Released: Wed Jun 22 2022 14:00:09 GMT-0700 (Pacific Daylight Time)
+ReactionButtonPress.js:65 Duration: 0.77
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:64 StopAudio was a Success
+APIcalls.js:39 speak was a Success
+APIcalls.js:80 EnableAvStreamingService was a Success
+APIcalls.js:102 StartAvStreaming was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:54 Pushed: Wed Jun 22 2022 14:00:31 GMT-0700 (Pacific Daylight Time)
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:52 PlayAudio was a Success
+ReactionButtonPress.js:42 {eventName: 'LeftBumpSensor_1655931472970', message: {…}}
+ReactionButtonPress.js:78 first reaction
+ReactionButtonPress.js:64 Released: Wed Jun 22 2022 14:00:32 GMT-0700 (Pacific Daylight Time)
+ReactionButtonPress.js:65 Duration: 0.742
+APIcalls.js:131 displayImage was a Success
+APIcalls.js:64 StopAudio was a Success
+APIcalls.js:39 speak was a Success
+APIcalls.js:113 StopAvStreaming was a Success
+APIcalls.js:91 DisableAvStreamingService was a Success

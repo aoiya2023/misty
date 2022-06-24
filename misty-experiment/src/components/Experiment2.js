@@ -1,6 +1,7 @@
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp2 } from "./Texts";
+import Checkbox from '@mui/material/Checkbox';
 import { leftArmUp, bothArmsUp, question, tilt } from "./Actions"; 
 
 export default function Experiment2(props) {
@@ -66,22 +67,22 @@ export default function Experiment2(props) {
 
     return (
         <div className="experiment">
-            <h3>Experiment 2</h3>
+            <h3 className="heading">Experiment 2</h3>
             <ul className="text-list">
                 {textsExp2.map(({text, utteranceId}, index) => {
                     return (
                         <li key={index}>
                             <div className="container"> 
-                                <input
+                                <Checkbox
                                     type="checkbox"
-                                    id={index}
-                                    name={utteranceId}
-                                    value={utteranceId}
+                                    id={utteranceId}
+                                    // name={utteranceId}
+                                    // value={utteranceId}
                                     title={text}
                                     checked={checkedState[index]}
                                     onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}
                                 />
-                                <label htmlFor={index}>{text}</label>
+                                <label htmlFor={index}>{utteranceId + ': ' + text}</label>
                             </div>
                         </li>
                     )

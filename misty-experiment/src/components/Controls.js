@@ -33,7 +33,7 @@ async function stopStreaming(ip) {
 export default function Controls(props) {
     return (
         <div className="controls">
-            <h3>Experiment Controls</h3>
+            <h3 className="heading">Experiment Controls</h3>
             <div className="button-container">
                 <div className="stream-button">
                     <button className="button" onClick={() => startStreaming(props.ip)}>Start Streaming</button>
