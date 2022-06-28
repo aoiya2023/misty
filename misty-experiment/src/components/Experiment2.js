@@ -15,8 +15,8 @@ export default function Experiment2(props) {
         );
         setCheckedState(updatedCheckedState);
 
-        console.log(text);
         speak(props.ip, text, utteranceId);
+        props.saveLastUtterance(text);
 
         if (utteranceId === "00Q") {
             bothArmsUp(props.ip);
@@ -76,11 +76,9 @@ export default function Experiment2(props) {
                                 <Checkbox
                                     type="checkbox"
                                     id={utteranceId}
-                                    // name={utteranceId}
-                                    // value={utteranceId}
-                                    title={text}
+                                    value={text}
                                     checked={checkedState[index]}
-                                    onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}
+                                    onChange={(e) => handleOnChange(index, e.currentTarget.value, utteranceId)}
                                 />
                                 <label htmlFor={index}>{utteranceId + ': ' + text}</label>
                             </div>

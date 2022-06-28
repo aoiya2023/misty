@@ -3,7 +3,7 @@ import './App.css';
 import Controls from './components/Controls';
 import Experiment1 from './components/Experiment1';
 import Experiment2 from './components/Experiment2';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -18,10 +18,23 @@ const ip = "172.28.92.36";
 
 function App() {
   const [condition, setCondition] = useState("1");
+  const [lastSpoken, setLastSpoken] = useState("");
 
-  function handleOnChange(e) {
-    setCondition(e.target.value);
-  } 
+  function saveLastUtterance(text) {
+    setLastSpoken(text);
+  }
+
+  useEffect(() => {
+    console.log("Last Spoken: ", lastSpoken)
+  })
+
+  function logInfo(text) {
+    console.log(text);
+  }
+  function handleOnChange(condition) {
+    setCondition(condition);
+    logInfo("Experiment Condition: " + condition)
+  }
 
   return (
     <div className="App">
@@ -29,7 +42,7 @@ function App() {
         <FormLabel>Experiment</FormLabel>
         <RadioGroup 
           value={condition}
-          onChange={(e) => handleOnChange(e)}
+          onChange={(e) => handleOnChange(e.target.value)}
           row
         >
           <FormControlLabel value="1" control={<Radio />} label="1" />
@@ -38,9 +51,9 @@ function App() {
         </RadioGroup> 
       </FormControl>
         
-        <Controls ip={ip}/>
-        <Experiment1 ip={ip} condition={condition}/>
-        <Experiment2 ip={ip} condition={condition}/>
+        <Controls ip={ip} saveLastUtterance={saveLastUtterance} logInfo={logInfo}/>
+        <Experiment1 ip={ip} condition={condition} saveLastUtterance={saveLastUtterance}/>
+        <Experiment2 ip={ip} saveLastUtterance={saveLastUtterance}/>
     </div>
   );
 }

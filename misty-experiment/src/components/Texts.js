@@ -124,7 +124,7 @@ export const textsExp2 = [
 
 export const objections = [
     {
-        text: "Oh no! I do not like that!",
+        text: "O no! I do not like that!",
         utteranceId: "00Z"
     },
     {
@@ -159,7 +159,7 @@ export const defaultRes = [
         utteranceId: "101"
     },
     {
-        text: "Please give a minute. <break strength=\"strong\"/> I don't know the answer.",
+        text: "Please give a second. I don't know the answer.",
         utteranceId: "102"
     },
     {

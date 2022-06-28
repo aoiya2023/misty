@@ -39,9 +39,9 @@ export default function Controls(props) {
                     <button className="button" onClick={() => startStreaming(props.ip)}>Start Streaming</button>
                     <button className="button" onClick={() => stopStreaming(props.ip)}>Stop Streaming</button>
                 </div>
-                <ReactionButtonPress ip={props.ip}/>
+                <ReactionButtonPress ip={props.ip} logInfo={props.logInfo}/>
             </div>
-            <DefaultRes ip={props.ip}/>
+            <DefaultRes ip={props.ip} saveLastUtterance={props.saveLastUtterance}/>
             
         </div>
     )

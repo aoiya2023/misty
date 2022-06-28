@@ -50,7 +50,7 @@ export default function ReactionButtonPress(props) {
                     displayImage(props.ip, "e_EcstacyHilarious.jpg");
                     
                     pushed = new Date(created);
-                    console.log("Pushed: " + pushed);
+                    // console.log("Pushed: " + pushed);
                 }
                 if (created !== null && !isContacted) {
                     stopAudio(props.ip);
@@ -60,8 +60,11 @@ export default function ReactionButtonPress(props) {
                     released = new Date(created);
                     timeDiff = (released - pushed) / 1000;
         
-                    console.log("Released: " + released);
-                    console.log("Duration: " + timeDiff);
+                    // console.log("Released: " + released);
+                    // console.log("Duration: " + timeDiff);
+                    props.logInfo("Duration: " + timeDiff);
+                    
+                    
         
                 }
             }
@@ -74,31 +77,32 @@ export default function ReactionButtonPress(props) {
 
     function playSound() {
         if (numTimePressed % 6 === 1) {
+            props.logInfo("reaction 1");
             console.log("reaction 1");
             speak(props.ip, objections[0].text, objections[0].utteranceId)
         }
         else if (numTimePressed % 6 === 2) {
-            console.log("reaction 2");
+            props.logInfo("reaction 2");
             speak(props.ip, objections[1].text, objections[1].utteranceId)
             
         }
         else if (numTimePressed % 6 === 3) {
-            console.log("reaction 3");
+            props.logInfo("reaction 3");
             speak(props.ip, objections[2].text, objections[2].utteranceId)
             
         }
         else if (numTimePressed % 6 === 4) {
-            console.log("reaction 4");
+            props.logInfo("reaction 4");
             speak(props.ip, objections[3].text, objections[3].utteranceId)
               
         }
         else if (numTimePressed % 6 === 5) {
-            console.log("reaction 5");
+            props.logInfo("reaction 5");
             speak(props.ip, objections[4].text, objections[4].utteranceId)
            
         }
         else {
-            console.log("reaction 6");
+            props.logInfo("reaction 6");
             speak(props.ip, objections[5].text, objections[5].utteranceId)
              
         }

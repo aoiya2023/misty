@@ -15,22 +15,8 @@ export default function DefaultRes(props) {
           index === position ? !item : item
         );
         setCheckedState(updatedCheckedState);
-
-        console.log(text);
         speak(props.ip, text, utteranceId);
-        // if (utteranceId === "001" || utteranceId === "002") {
-        //     leftArmUp(props.ip);
-        // }
-        // if (utteranceId === "003") {
-        //     question(props.ip, true);
-        // }
-        // if (utteranceId === "004" || utteranceId === "006") {
-        //     bothArmsUp(props.ip);
-        // }
-        // if (utteranceId === "005") {
-        //     question(props.ip);
-        // }
-        
+        props.saveLastUtterance(text);
     };
 
     return (
@@ -44,11 +30,9 @@ export default function DefaultRes(props) {
                                 <Checkbox
                                     type="checkbox"
                                     id={utteranceId}
-                                    // name={utteranceId}
-                                    // value={utteranceId}
-                                    title={text}
+                                    value={text}
                                     checked={checkedState[index]}
-                                    onChange={(e) => handleOnChange(index, e.currentTarget.title, utteranceId)}
+                                    onChange={(e) => handleOnChange(index, e.currentTarget.value, utteranceId)}
                                 />
                                 <label htmlFor={index}>{utteranceId + ': ' + text}</label>
                             </div>
