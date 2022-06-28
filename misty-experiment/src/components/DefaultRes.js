@@ -16,7 +16,7 @@ export default function DefaultRes(props) {
         );
         setCheckedState(updatedCheckedState);
         speak(props.ip, text, utteranceId);
-        props.saveLastUtterance(text);
+        props.logInfo("Last Spoken: " + text);
     };
 
     return (

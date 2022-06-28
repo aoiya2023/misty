@@ -33,15 +33,10 @@ def main(args):
                 # data = re.search(r'\s.+', line)
                 fp_output.write(match.string[15:])
         
-
-        
-
-
         # open output file with write access
             # output file is empty, with the filename being participant ID number
         # if the line starts with "App.js:" then write it to the output file with "App.js" part stripped.
         # save the output file
-        pass
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Open log file to read data and " +\

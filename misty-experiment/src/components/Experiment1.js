@@ -20,7 +20,7 @@ export default function Experiment1(props) {
         setCheckedState(updatedCheckedState);
 
         speak(props.ip, text, utteranceId);
-        props.saveLastUtterance(text);
+        props.logInfo("Last Spoken: " + text);
         
         if (utteranceId === "001" || utteranceId === "002") {
             leftArmUp(props.ip);

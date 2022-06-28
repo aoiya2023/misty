@@ -41,7 +41,7 @@ export default function Controls(props) {
                 </div>
                 <ReactionButtonPress ip={props.ip} logInfo={props.logInfo}/>
             </div>
-            <DefaultRes ip={props.ip} saveLastUtterance={props.saveLastUtterance}/>
+            <DefaultRes ip={props.ip} logInfo={props.logInfo}/>
             
         </div>
     )

@@ -1,60 +1,69 @@
 // import axios from 'axios';
 import './App.css';
-import Controls from './components/Controls';
-import Experiment1 from './components/Experiment1';
-import Experiment2 from './components/Experiment2';
-import { useEffect, useState } from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+import InPerson from './components/InPerson';
+import { useState } from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 
 
 // URL: 
 const ip = "172.28.92.36";
 
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ div: 3 }}>
+          {children}
+        </Box>
+      )}
+    </div>
+  );
+}
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+    value: index
+  };
+}
 
 function App() {
-  const [condition, setCondition] = useState("1");
-  const [lastSpoken, setLastSpoken] = useState("");
+  const [tabValue, setTabValue] = useState(0);
 
-  function saveLastUtterance(text) {
-    setLastSpoken(text);
-  }
-
-  useEffect(() => {
-    console.log("Last Spoken: ", lastSpoken)
-  })
-
-  function logInfo(text) {
-    console.log(text);
-  }
-  function handleOnChange(condition) {
-    setCondition(condition);
-    logInfo("Experiment Condition: " + condition)
+  function handleTabChange(event, newtab) {
+    setTabValue(newtab);
   }
 
   return (
-    <div className="App">
-      <FormControl>
-        <FormLabel>Experiment</FormLabel>
-        <RadioGroup 
-          value={condition}
-          onChange={(e) => handleOnChange(e.target.value)}
-          row
-        >
-          <FormControlLabel value="1" control={<Radio />} label="1" />
-          <FormControlLabel value="2" control={<Radio />} label="2" />
-          <FormControlLabel value="3" control={<Radio />} label="3" />
-        </RadioGroup> 
-      </FormControl>
-        
-        <Controls ip={ip} saveLastUtterance={saveLastUtterance} logInfo={logInfo}/>
-        <Experiment1 ip={ip} condition={condition} saveLastUtterance={saveLastUtterance}/>
-        <Experiment2 ip={ip} saveLastUtterance={saveLastUtterance}/>
-    </div>
+    <Box sx={{ width: '100%' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={tabValue} onChange={handleTabChange}>
+          <Tab label="In-person experiment" {...a11yProps(0)} />
+          <Tab label="using 5 pronouns" {...a11yProps(1)} />
+          <Tab label="Conflicting gender queues" {...a11yProps(2)} />
+        </Tabs>
+      </Box>
+      <TabPanel value={tabValue} index={0}>
+        <InPerson ip={ip}/>
+      </TabPanel>
+      <TabPanel value={tabValue} index={1}>
+      
+      </TabPanel>
+      <TabPanel value={tabValue} index={2}>
+        Item Three
+      </TabPanel>
+    </Box>
   );
 }
 

@@ -16,7 +16,7 @@ export default function Experiment2(props) {
         setCheckedState(updatedCheckedState);
 
         speak(props.ip, text, utteranceId);
-        props.saveLastUtterance(text);
+        props.logInfo("Last Spoken: " + text);
 
         if (utteranceId === "00Q") {
             bothArmsUp(props.ip);
