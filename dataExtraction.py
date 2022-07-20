@@ -28,10 +28,10 @@ def main(args):
     with open(filename, "w") as fp_output:
         fp_output.write("ID: " +  str(args.id) + "\n")
         for line in fp_input.readlines():
-            match = re.search(r'API.+', line)
+            match = re.search(r'App.+', line)
             if match:
                 # data = re.search(r'\s.+', line)
-                fp_output.write(match.string[15:])
+                fp_output.write(match.string[9:])
         
         # open output file with write access
             # output file is empty, with the filename being participant ID number

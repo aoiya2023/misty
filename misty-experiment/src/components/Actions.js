@@ -83,3 +83,71 @@ export async function tilt(ip, pause=false) {
     await sleep(3000);
     axios.post("http://" + ip + "/api/head", head1);
 }
+
+export async function action3(ip) {
+    let arms0 = {
+        "LeftArmPosition": -90,
+        "RightArmPosition": 90,
+        "LeftArmVelocity": 100,
+        "RightArmVelocity": 100
+    };
+    let arms1 = {
+        "LeftArmPosition": 90,
+        "RightArmPosition": 90,
+        "LeftArmVelocity": 80,
+        "RightArmVelocity": 100
+    };
+    let arms2 = {
+        "LeftArmPosition": -90,
+        "RightArmPosition": -90,
+        "LeftArmVelocity": 100,
+        "RightArmVelocity": 100
+    };
+    let head0 = {
+        "Pitch": -10,
+        "Roll": 0,
+        "Yaw": 0,
+        "Velocity": 100
+    }
+    let head1 = {
+        "Pitch": 0,
+        "Roll": 0,
+        "Yaw": 0,
+        "Velocity": 100
+    }
+    let head2 = {
+        "Pitch": 26,
+        "Roll": 0,
+        "Yaw": 0,
+        "Velocity": 100
+    }
+
+    // Hi (leftArmUp)
+    axios.post("http://" + ip + "/api/arms/set", arms0);
+    await sleep(2000);
+    axios.post("http://" + ip + "/api/arms/set", arms1);
+    
+    // for control: 1000, others: 
+    await sleep(4000);
+
+    // It is nice to meet you (bothArmsUp + lookup)
+    axios.post("http://" + ip + "/api/arms/set", arms2);
+    axios.post("http://" + ip + "/api/head", head0);
+    await sleep(2000);
+    axios.post("http://" + ip + "/api/arms/set", arms1);
+    axios.post("http://" + ip + "/api/head", head1);
+    await sleep(7000);
+    
+    // await sleep(3000);
+    // but I am only ... (nodd)
+    axios.post("http://" + ip + "/api/head", head2);
+    await sleep(3000);
+    axios.post("http://" + ip + "/api/head", head1);
+    await sleep(9000);
+
+    // mostly, I interact with people (bothArmsUp)
+    axios.post("http://" + ip + "/api/arms/set", arms2);
+    await sleep(2000);
+    axios.post("http://" + ip + "/api/arms/set", arms1);
+
+}

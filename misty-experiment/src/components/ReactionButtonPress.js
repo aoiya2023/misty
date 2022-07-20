@@ -78,7 +78,6 @@ export default function ReactionButtonPress(props) {
     function playSound() {
         if (numTimePressed % 6 === 1) {
             props.logInfo("reaction 1");
-            console.log("reaction 1");
             speak(props.ip, objections[0].text, objections[0].utteranceId)
         }
         else if (numTimePressed % 6 === 2) {

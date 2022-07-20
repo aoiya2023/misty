@@ -45,8 +45,9 @@ export function speak(ip, text, utteranceId) {
 
 // playAudio(data)
 // play audio from misty. Recommend to use audio that is already loaded to misty.
-export function playAudio(ip, filename) {
+export function playAudio(ip, filename, volume=20) {
     sound["FileName"] = filename;
+    sound["Volume"] = volume;
     axios.post("http://" + ip + "/api/audio/play", sound)
         .then(function (response) {
             console.log(`PlayAudio was a ${response.data.status}`);
