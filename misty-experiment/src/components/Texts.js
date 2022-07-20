@@ -202,7 +202,7 @@ export const textsExp3 = [
         condition: 3
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are he, him, his \
+        text: "Hi, I am D thirty four, my pronouns are he, him, his. \
         It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
         but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
         the environment is limited. Mostly, I interact with people!",

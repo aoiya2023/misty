@@ -116,7 +116,7 @@ export async function action3(ip) {
         "Velocity": 100
     }
     let head2 = {
-        "Pitch": 26,
+        "Pitch": 10,
         "Roll": 0,
         "Yaw": 0,
         "Velocity": 100
@@ -127,7 +127,7 @@ export async function action3(ip) {
     await sleep(2000);
     axios.post("http://" + ip + "/api/arms/set", arms1);
     
-    // for control: 1000, others: 
+    // for control: 1000, others: 4000
     await sleep(4000);
 
     // It is nice to meet you (bothArmsUp + lookup)
@@ -139,10 +139,11 @@ export async function action3(ip) {
     await sleep(7000);
     
     // await sleep(3000);
-    // but I am only ... (nodd)
+    // but I am only ... (look down)
     axios.post("http://" + ip + "/api/head", head2);
     await sleep(3000);
     axios.post("http://" + ip + "/api/head", head1);
+    // other: 9000 control: 7000
     await sleep(9000);
 
     // mostly, I interact with people (bothArmsUp)
