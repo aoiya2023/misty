@@ -6,6 +6,8 @@ import Checkbox from '@mui/material/Checkbox';
 import './Experiment.css';
 
 let audioFiles = [
+    "masculine_none.mp3",
+    "feminine_none.mp3",
     "masculine_it.mp3",
     "feminine_it.mp3",
     "masculine_they.mp3",
@@ -53,6 +55,12 @@ export default function Experiment4(props) {
         }
         if (utteranceId === "408") {
             playAudio(props.ip, audioFiles[7], 40);
+        }
+        if (utteranceId === "409") {
+            playAudio(props.ip, audioFiles[8], 40);
+        }
+        if (utteranceId === "410") {
+            playAudio(props.ip, audioFiles[9], 40);
         }
         action3(props.ip);
         props.logInfo("Last Spoken: " + text);

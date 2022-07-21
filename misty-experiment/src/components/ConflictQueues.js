@@ -30,6 +30,8 @@ export default function ConflictQueues(props) {
               <FormControlLabel value="6" control={<Radio />} label="6" />
               <FormControlLabel value="7" control={<Radio />} label="7" />
               <FormControlLabel value="8" control={<Radio />} label="8" />
+              <FormControlLabel value="9" control={<Radio />} label="9" />
+              <FormControlLabel value="10" control={<Radio />} label="10" />
             </RadioGroup> 
           </FormControl>
           <Experiment4 ip={props.ip} condition={condition} logInfo={props.logInfo}/>
