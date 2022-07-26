@@ -2,7 +2,14 @@
 
 ## Available Scripts
 
-In the project directory, you can run:
+If this is your first time and have never run the app, do:
+
+### `npm install`
+
+This will install dependencies that are required to run the app.
+
+
+After you run the above command, in the project directory, you can run:
 
 ### `npm start`
 
