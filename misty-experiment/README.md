@@ -58,9 +58,9 @@ When the checkbox is clicked, the speak command to the robot with the displayed 
 ## Files
 
 `App.js` ----- `InPerson.js` ----- `Controls.js` ----- `ReactionButtonPress.js`  
-          |                    |                   |  
-          |                    |                   |  
-          |                    |                   -- `DefaultRes.js`   
+          |         &emsp;           |       &emsp;            |  
+          |        &emsp;            |        &emsp;           |  
+          |      &emsp;              |         &emsp;          -- `DefaultRes.js`   
           |                    |  
           |                    -- `Experiment1.js`  
           |                    |  
