@@ -94,3 +94,9 @@ This is a file that is directly taken from Misty Robotics. It provides an easier
 
 All utterances (that would be passed on in a speak command) are defined.
 
+## Issue
+
+#### Checkbox status being shared across conditions
+
+There is an issue of the status of checkbox being shared across conditions. For example, if checkbox was clicked for condition 1 in the Online Experiment 2, for all of the conditions in that experiment, checkbox appear as clicked. 
+
