@@ -1,19 +1,29 @@
-# Read the text file
-# duration, which utterance, condition (1: they/them, 2: it/its, 3: control)
+"""
+dataExtraction.py
+"""
+
 import re
 import os
 import argparse
 
+# NOT USED
 def get_files(dirname): 
-    """A generator: recursively navigates a directory, yielding each file's
-    full filepath instead of just the filename."""
+    """
+    Recursively navigates a directory, yielding each file's full filepath instead of just the filename.
+    """
     for root, dirs, files in os.walk(dirname): 
         for fname in files: 
             yield os.path.join(root, fname)
 
+# NOT USED
 def get_data(fp):
+    """
+    input: file pointer
+    output: list of lines that starts with 'App.js:'
+    """
     fp.seek(0)
     lines = []
+
     for line in fp.readlines():
         match = re.search(r'App.+', line)
         if match:
@@ -22,21 +32,20 @@ def get_data(fp):
             lines.append(0)
     return lines
 
+"""
+For now, it is assumed that data will be processed for each participant.
+Copy console log into a text file and put it in as args along with participant ID.
+"""
 def main(args):
     fp_input = args.inputFILE
-    filename = str(args.id) + ".txt"
+    filename = str(args.id) + ".txt"  # participant ID is the name of output file 
     with open(filename, "w") as fp_output:
-        fp_output.write("ID: " +  str(args.id) + "\n")
+        fp_output.write("ID: " +  str(args.id) + "\n")  # first line
+        # if the line starts with "App.js:" then write it to the output file with "App.js" part stripped.
         for line in fp_input.readlines():
             match = re.search(r'App.+', line)
             if match:
-                # data = re.search(r'\s.+', line)
                 fp_output.write(match.string[9:])
-        
-        # open output file with write access
-            # output file is empty, with the filename being participant ID number
-        # if the line starts with "App.js:" then write it to the output file with "App.js" part stripped.
-        # save the output file
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Open log file to read data and " +\

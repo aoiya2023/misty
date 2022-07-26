@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import './App.css';
 import InPerson from './components/InPerson';
 import FivePronouns from './components/FivePronouns';
@@ -9,9 +8,10 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
 
-// URL: 
+// Robot IP address 
 const ip = "172.28.92.36";
 
+// Define each tab
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -20,7 +20,6 @@ function TabPanel(props) {
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -35,7 +34,6 @@ function TabPanel(props) {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
     value: index
   };
 }
@@ -43,6 +41,7 @@ function a11yProps(index) {
 function App() {
   const [tabValue, setTabValue] = useState(0);
 
+  // logging to console
   function logInfo(text) {
     console.log(text);
   }

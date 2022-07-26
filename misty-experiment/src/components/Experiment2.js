@@ -1,3 +1,6 @@
+/**
+ * In-Person Experiment 2 (Experiment 2)
+ */
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp2 } from "./Texts";
@@ -9,6 +12,7 @@ export default function Experiment2(props) {
         new Array(textsExp2.length).fill(false)
     );
     
+    // When the checkbox is checked, speak (+ locomotion) command is sent 
     function handleOnChange(position, text, utteranceId) {
         const updatedCheckedState = checkedState.map((item, index) =>
           index === position ? !item : item
@@ -16,7 +20,7 @@ export default function Experiment2(props) {
         setCheckedState(updatedCheckedState);
 
         speak(props.ip, text, utteranceId);
-        props.logInfo("Last Spoken: " + text);
+        props.logInfo("Last Spoken: " + text);  // log from App.js
 
         if (utteranceId === "00Q") {
             bothArmsUp(props.ip);

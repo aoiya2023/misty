@@ -1,3 +1,6 @@
+/**
+ * Texts - all utterance is defined here
+ */
 export const textsExp1 = [
     {
         text: "Hi, I am D thirty four, my pronouns are they, them, theirs. How about you?",
@@ -179,41 +182,41 @@ export const defaultRes = [
 
 export const textsExp3 = [
     {
-        text: "Hi. It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-            but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-            the environment is limited. Mostly, I interact with people!",
+        text: "Hi. It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "301",
         condition: 1
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are they, them, theirs. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are they, them, theirs. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "302",
         condition: 2
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are it, it, its. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are it, it, its. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "303",
         condition: 3
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are he, him, his. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are he, him, his. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "304",
         condition: 4
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are she, her, hers. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are she, her, hers. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "305",
         condition: 5
     }
@@ -221,80 +224,80 @@ export const textsExp3 = [
 
 export const textsExp4 = [
     {
-        text: "Hi. It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi. It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" + 
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" + 
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "401",
         condition: 1
     },
     {
-        text: "Hi. It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi. It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "402",
         condition: 2
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are it, it, its. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are it, it, its. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "403",
         condition: 3
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are it, it, its. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are it, it, its. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "404",
         condition: 4
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are they, them, theirs. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are they, them, theirs. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "405",
         condition: 5
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are they, them, theirs. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are they, them, theirs. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "406",
         condition: 6
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are he, him, his. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are he, him, his. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "407",
         condition: 7
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are he, him, his. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are he, him, his. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "408",
         condition: 8
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are she, her, hers. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are she, her, hers. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "409",
         condition: 9
     },
     {
-        text: "Hi, I am D thirty four, my pronouns are she, her, hers. \
-        It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \
-        but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \
-        the environment is limited. Mostly, I interact with people!",
+        text: "Hi, I am D thirty four, my pronouns are she, her, hers. \n" +
+        "It is nice to meet you! I can talk to people and understand what people say to me. I can also move around, \n" +
+        "but I am only fourteen inches tall so stairs can be difficult. I also have no hands, so my ability to manipulate \n" +
+        "the environment is limited. Mostly, I interact with people!",
         utteranceId: "410",
         condition: 10
     },

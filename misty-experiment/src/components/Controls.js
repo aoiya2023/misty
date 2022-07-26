@@ -1,4 +1,6 @@
-// import { startStreaming, stopStreaming } from "./AvStreaming";
+/**
+ * Experiment Controls
+ */
 import { startAvStreaming, stopAvStreaming, enableAvStreamingService, disableAvStreamingService } from "./APIcalls";
 import ReactionButtonPress from './ReactionButtonPress';
 import DefaultRes from "./DefaultRes";
@@ -8,7 +10,7 @@ import "./Controls.css";
  * AV Streaming
  */
 
-// Streaming URL: rtsp://ayasuda:v35K+%GC:t]w%SM5@172.28.92.36:1936
+// Streaming URL: rtsp://<UserName>:<Password>@<robot-ip-address>:<port-number>
 
 // Stops code execution for a set amount of time.
 function sleep(ms) {

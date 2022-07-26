@@ -8,13 +8,16 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
+// IN-PERSON EXPERIMENT
 export default function InPerson(props) {
-    const [condition, setCondition] = useState("1");
+    // experiment condition
+    const [condition, setCondition] = useState("1");  
 
     function handleConditionChange(condition) {
       setCondition(condition);
-      props.logInfo("Experiment Condition: " + condition)
+      props.logInfo("Experiment Condition: " + condition)  // log from App.js
     }
+
     return (
         <div className="InPerson">
           <FormControl>
@@ -24,6 +27,7 @@ export default function InPerson(props) {
               onChange={(e) => handleConditionChange(e.target.value)}
               row
             >
+              {/* Define # of conditions here */}
               <FormControlLabel value="1" control={<Radio />} label="1" />
               <FormControlLabel value="2" control={<Radio />} label="2" />
               <FormControlLabel value="3" control={<Radio />} label="3" />

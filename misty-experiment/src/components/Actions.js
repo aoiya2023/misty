@@ -128,7 +128,7 @@ export async function action3(ip) {
     axios.post("http://" + ip + "/api/arms/set", arms1);
     
     // for control: 1000, others: 4000
-    await sleep(4000);
+    await sleep(1000);
 
     // It is nice to meet you (bothArmsUp + lookup)
     axios.post("http://" + ip + "/api/arms/set", arms2);
@@ -144,7 +144,7 @@ export async function action3(ip) {
     await sleep(3000);
     axios.post("http://" + ip + "/api/head", head1);
     // other: 9000 control: 7000
-    await sleep(9000);
+    await sleep(7000);
 
     // mostly, I interact with people (bothArmsUp)
     axios.post("http://" + ip + "/api/arms/set", arms2);

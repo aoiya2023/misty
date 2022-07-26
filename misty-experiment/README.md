@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Misty Experiment Platform
 
 ## Available Scripts
 
@@ -14,59 +12,81 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## How to Navigate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Descriptions for navigating the platform. Each section may include tips/notes that I wrote down while writing the code and testing the platform.
 
-### `npm run build`
+### Console Log
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Any information/error is logged to console. Any important ones such as experiment condition, last spoken utterance, and # of times the bump sensor was pressed, etc is logged from `App.js`. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Experiment Condition
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Depending on the condition that is chosen, the scripts will change.
 
-### `npm run eject`
+### Experiment Controls
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Streaming
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Start Streaming` starts streaming on the specified URL.  
+The URL will be `rtsp://<UserName>:<Password>)@<robot-ip-address>:<port-number>`. Specify `UserName` and `Password` in 
+`APIcalls.js`. Be sure to set them for security.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`Stop Streaming` stops the streaming.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The light on the robot's head will turn on when streaming. Recommend to start streaming before participant enters the room (consent form needs to be signed outside in order to do that). 
+- Streaming has several seconds of latency.
+- For viewing the streaming, VLC is recommended. 
 
-## Learn More
+#### Bump Sensor
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`Start Bump Sensor` starts the bump sensor for experiment 2. While the bump sensor is active, the robot will give a specified reaction. 
+`Stop Bump Sensor` makes the bump sensor inactive.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Start bump sensor at the start of experiment 2.
 
-### Code Splitting
+#### Default Response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+These are responses when the participant says something out of script. You can add/delete these by editing `Texts.js`.
 
-### Analyzing the Bundle Size
+### Experiment 1,2,3,4
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+When the checkbox is clicked, the speak command to the robot with the displayed utterance is sent.
 
-### Making a Progressive Web App
+- To avoid clicking by accident, it would be better if the css of the checkbox changes (more siginificantly) after it has been clicked once. Do not make them unclickable, since the participant may repeat.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Files
 
-### Advanced Configuration
+`App.js` ----- `InPerson.js` ----- `Controls.js` ----- `ReactionButtonPress.js`
+          |                    |                   |
+          |                    |                   |
+          |                    |                   -- `DefaultRes.js` 
+          |                    |
+          |                    -- `Experiment1.js`
+          |                    |
+          |                    |
+          |                    -- `Experiment2.js`
+          |
+          -- `FivePronouns.js` ----- `Experiment3.js`
+          |
+          |
+          -- `ConflictQueues.js` ----- `Experiment4.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Additional Files
 
-### Deployment
+#### `APIcalls.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Most of the API call functions, except for locomotion, are defined here. This is also where the default values are defined.
 
-### `npm run build` fails to minify
+#### `Actions.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+API call functions related to locomotion are defined.
 
-### note
+#### `LightSocket.js`
+
+This is a file that is directly taken from Misty Robotics. It provides an easier way to use the websockets to conenct to the robot.
+
+#### `Texts.js`
+
+All utterances (that would be passed on in a speak command) are defined.
+

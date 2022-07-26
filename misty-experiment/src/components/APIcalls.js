@@ -4,8 +4,8 @@ let stream = {
     "URL": "rtspd:1936",
     "Width": 1920,
     "Height": 1080,
-    "UserName": "ayasuda",
-    "Password": "v35K+%GC:t]w%SM5"
+    "UserName": "",
+    "Password": ""
 }
 
 let speech = {

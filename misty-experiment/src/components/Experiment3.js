@@ -1,3 +1,6 @@
+/**
+ * Online Experiment 1 (Experiment 3)
+ */
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { textsExp3 } from "./Texts";
@@ -8,11 +11,12 @@ import './Experiment.css';
 export default function Experiment3(props) {
     const expCondition = parseInt(props.condition)
     let filtered;
+    // filtered is an array of utterances that is needed for the current condition
     filtered = textsExp3?.filter(({condition}) => condition === expCondition || condition === 0);
     const [checkedState, setCheckedState] = useState(
         new Array(filtered.length).fill(false)
     );
-    
+    // When the checkbox is checked, speak + locomotion command is sent
     function handleOnChange(position, text, utteranceId) {
         const updatedCheckedState = checkedState.map((item, index) =>
           index === position ? !item : item

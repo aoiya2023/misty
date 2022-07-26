@@ -1,7 +1,9 @@
+/**
+ * Default Response
+ */
 import { speak } from "./APIcalls";
 import { useState } from "react";
 import { defaultRes } from "./Texts";
-// import { leftArmUp, bothArmsUp, question } from "./Actions";
 import Checkbox from '@mui/material/Checkbox'; 
 import './Experiment.css';
 
@@ -9,14 +11,14 @@ export default function DefaultRes(props) {
     const [checkedState, setCheckedState] = useState(
         new Array(defaultRes.length).fill(false)
     );
-    
+    // When the checkbox is clicked, speak API call is made
     function handleOnChange(position, text, utteranceId) {
         const updatedCheckedState = checkedState.map((item, index) =>
           index === position ? !item : item
         );
-        setCheckedState(updatedCheckedState);
+        setCheckedState(updatedCheckedState);  // check the checkbox
         speak(props.ip, text, utteranceId);
-        props.logInfo("Last Spoken: " + text);
+        props.logInfo("Last Spoken: " + text);  // log from App.js
     };
 
     return (
