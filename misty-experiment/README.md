@@ -68,20 +68,6 @@ When the checkbox is clicked, the speak command to the robot with the displayed 
         - `Experiment3.js`
     - `ConflictQueues.js`
         - `Experiment4.js` 
-`App.js` ----- `InPerson.js`              ----- `Controls.js`                 ----- `ReactionButtonPress.js`  
- &emsp; &emsp; &emsp; &emsp; | &emsp; &emsp; &emsp; &emsp; &emsp;&emsp;| &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;|  
- &emsp; |        &emsp;            |        &emsp;           |  
- &emsp; |      &emsp;              |         &emsp;          -- `DefaultRes.js`   
- &emsp; |                    |  
- &emsp; |                    -- `Experiment1.js`  
- &emsp; |                    |  
- &emsp; |                    |  
- &emsp; |                    -- `Experiment2.js`  
- &emsp; |  
- &emsp; -- `FivePronouns.js` ----- `Experiment3.js`  
- &emsp; |  
- &emsp; |  
- &emsp; -- `ConflictQueues.js` ----- `Experiment4.js`  
 
 ### Additional Files
 
